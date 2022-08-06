@@ -12,7 +12,7 @@ function runQuotes(){
     const s2sVariant = s2sMax - s2sMin;
     const baoVariant = baoMax - baoMin;
     const milesVariant = milesMax - milesMin;
-    let tripMileage = prompt("Please enter the total mileage of the trip");
+    let tripMileage = prompt("Please enter the total mileage of the trip", 500);
     const sTimeFrames = ["2 to 3 weeks",
     "2.5 to 3.5 weeks", "3 to 4 weeks"];
     const bTimeFrames = ["1 to 2 weeks", "1.5 to 2.5 weeks"];
@@ -23,18 +23,18 @@ function runQuotes(){
     
     document.getElementById("mirroringInput").innerHTML = `<br>You entered: ${tripMileage}<br>`;
     
-    if (tripMileage === undefined || tripMileage === null || isNaN(tripMileage)){
+    if (!tripMileage || isNaN(tripMileage)){
         document.getElementById("quotes").innerHTML = `<br>Please make sure to enter a value.<br>`;
         document.getElementById("clientCopyPaste").innerHTML = ``;        
         return;
     }
     
-    if (tripMileage<=200){
+    if (tripMileage <= 200){
         document.getElementById("quotes").innerHTML = `<br>We likely can use an Iconic Sprinter Van for this trip.<br>`;
         document.getElementById("clientCopyPaste").innerHTML = ``;        
         return;
     }
-    if (tripMileage>=3750){
+    if (tripMileage >= 3750){
         document.getElementById("quotes").innerHTML = `<br>Unfortunately, this would likely be an international shipment. Check in with Shippio for Europe shipments, Bikes Abroad for Australia shipments, Skyline for Africa shipments, and TFX for Canada shipments<br>`;
         document.getElementById("clientCopyPaste").innerHTML = ``;
         return;
