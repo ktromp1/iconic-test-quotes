@@ -12,7 +12,6 @@ function runQuotes(){
     const s2sVariant = s2sMax - s2sMin;
     const baoVariant = baoMax - baoMin;
     const milesVariant = milesMax - milesMin;
-    // tripMileage = int(input("\n\nMiles?\n\n\n")) in python
     let tripMileage = prompt("Please enter the total mileage of the trip");
     const sTimeFrames = ["2 to 3 weeks",
     "2.5 to 3.5 weeks", "3 to 4 weeks"];
@@ -22,28 +21,27 @@ function runQuotes(){
     const bTripQuote = round50(
         baoMax - (((milesVariant - tripMileage) / milesVariant) * baoVariant));
     
+    document.getElementById("mirroringInput").innerHTML = `<br>You entered: ${tripMileage}<br>`;
+    
     if (tripMileage === undefined || tripMileage === null || isNaN(tripMileage)){
         document.getElementById("quotes").innerHTML = `<br>Please make sure to enter a value.<br>`;
+        document.getElementById("clientCopyPaste").innerHTML = ``;        
         return;
     }
     
     if (tripMileage<=200){
         document.getElementById("quotes").innerHTML = `<br>We likely can use an Iconic Sprinter Van for this trip.<br>`;
+        document.getElementById("clientCopyPaste").innerHTML = ``;        
         return;
     }
     if (tripMileage>=3750){
         document.getElementById("quotes").innerHTML = `<br>Unfortunately, this would likely be an international shipment. Check in with Shippio for Europe shipments, Bikes Abroad for Australia shipments, Skyline for Africa shipments, and TFX for Canada shipments<br>`;
+        document.getElementById("clientCopyPaste").innerHTML = ``;
         return;
     }
+    
     document.getElementById("quotes").innerHTML = `<br>Bao quote to Iconic (without markup): ${bTripQuote}<br>Bao timeframe: Roughly ${bTimeFrames[bTiming(tripMileage)]}<br>S2S quote to Iconic (without markup): ${sTripQuote}<br>S2S timeframe: Roughly ${sTimeFrames[sTiming(tripMileage)]}<br><br><br>`;
     document.getElementById("clientCopyPaste").innerHTML = `<br>Here is the format to paste to the client:<br><br>$${bTripQuote}(NEEDS MARKUP) - Roughly ${bTimeFrames[bTiming(tripMileage)]} - Private Shipper<br>$${sTripQuote}(NEEDS MARKUP) - Roughly ${sTimeFrames[sTiming(tripMileage)]} - Private Shipper<br>$TBD - Roughly 5 - 6 weeks - Haulbikes`;
-    /** 
-     * doc write the following:
-     * print("\n\n\nBao quote to Iconic (without markup): {}\nBao timeframe: Roughly {}\nS2S quote to Iconic (without markup): {}\nS2S timeframe: Roughly {}\n\n\n".format(
-        bTripQuote, bTimeFrames[bTiming(tripMileage)], sTripQuote, sTimeFrames[sTiming(tripMileage)]))
-    print("\nHere is the format to paste to the client:\n\n${}(NEEDS MARKUP) - Roughly {} - Private Shipper\n${}(NEEDS MARKUP) - Roughly {} - Private Shipper\n$TBD - Roughly 5 - 6 weeks - Haulbikes\n\n\n".format(
-        bTripQuote, bTimeFrames[bTiming(tripMileage)], sTripQuote, sTimeFrames[sTiming(tripMileage)]))
-    */
     
 
 }
