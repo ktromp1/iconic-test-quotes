@@ -21,6 +21,14 @@ function runQuotes(){
         s2sMax - (((milesVariant - tripMileage) / milesVariant) * s2sVariant));
     const bTripQuote = round50(
         baoMax - (((milesVariant - tripMileage) / milesVariant) * baoVariant));
+    if (tripMileage<=200){
+        document.getElementById("quotes").innerHTML = `<br>We likely can use an Iconic Sprinter Van for this trip.<br>`;
+        return;
+    }
+    if (tripMileage>=3750){
+        document.getElementById("quotes").innerHTML = `<br>Unfortunately, this would likely be an international shipment. Check in with Shippio for Europe shipments, Bikes Abroad for Australia shipments, Skyline for Africa shipments, and TFX for Canada shipments<br>`;
+        return;
+    }
     document.getElementById("quotes").innerHTML = `<br>Bao quote to Iconic (without markup): ${bTripQuote}<br>Bao timeframe: Roughly ${bTimeFrames[bTiming(tripMileage)]}<br>S2S quote to Iconic (without markup): ${sTripQuote}<br>S2S timeframe: Roughly ${sTimeFrames[sTiming(tripMileage)]}<br><br><br>`;
     document.getElementById("clientCopyPaste").innerHTML = `<br>Here is the format to paste to the client:<br><br>$${bTripQuote}(NEEDS MARKUP) - Roughly ${bTimeFrames[bTiming(tripMileage)]} - Private Shipper<br>$${sTripQuote}(NEEDS MARKUP) - Roughly ${sTimeFrames[sTiming(tripMileage)]} - Private Shipper<br>$TBD - Roughly 5 - 6 weeks - Haulbikes`;
     /** 
