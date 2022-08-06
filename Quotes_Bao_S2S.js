@@ -21,6 +21,12 @@ function runQuotes(){
         s2sMax - (((milesVariant - tripMileage) / milesVariant) * s2sVariant));
     const bTripQuote = round50(
         baoMax - (((milesVariant - tripMileage) / milesVariant) * baoVariant));
+    
+    if (tripMileage === undefined || tripMileage === null || isNaN(tripMileage)){
+        document.getElementById("quotes").innerHTML = `<br>Please make sure to enter a value.<br>`;
+        return;
+    }
+    
     if (tripMileage<=200){
         document.getElementById("quotes").innerHTML = `<br>We likely can use an Iconic Sprinter Van for this trip.<br>`;
         return;
