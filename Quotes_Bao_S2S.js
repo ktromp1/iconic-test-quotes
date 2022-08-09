@@ -41,7 +41,7 @@ function runQuotes(){
     }
     
     document.getElementById("quotes").innerHTML = `<br>Bao quote to Iconic (without markup): ${bTripQuote}<br>Bao timeframe: Roughly ${bTimeFrames[bTiming(tripMileage)]}<br>S2S quote to Iconic (without markup): ${sTripQuote}<br>S2S timeframe: Roughly ${sTimeFrames[sTiming(tripMileage)]}<br><br><br>`;
-    document.getElementById("clientCopyPaste").innerHTML = `<br>Here is the format to paste to the client:<br><br>$${bTripQuote}(NEEDS MARKUP) - Roughly ${bTimeFrames[bTiming(tripMileage)]} - Private Shipper<br>$${sTripQuote}(NEEDS MARKUP) - Roughly ${sTimeFrames[sTiming(tripMileage)]} - Private Shipper<br>$TBD - Roughly 5 - 6 weeks - Haulbikes`;
+    document.getElementById("clientCopyPaste").innerHTML = `<br>Here is the format to paste to the client:<br><br>$${bTripQuote}(NEEDS MARKUP) - Roughly ${bTimeFrames[bTiming(tripMileage)]} - Private Shipper<br>$${sTripQuote}(NEEDS MARKUP) - Roughly ${sTimeFrames[sTiming(tripMileage)]} - Private Shipper<br>$TBD - Roughly 5 - 9 weeks - Haulbikes`;
     
 
 }
