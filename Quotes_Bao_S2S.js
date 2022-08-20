@@ -40,7 +40,7 @@ function runQuotes(){
         return;
     }
     
-    document.getElementById("quotes").innerHTML = `<br>Bao quote to Iconic (without markup): ${bTripQuote}<br>Bao timeframe: Roughly ${bTimeFrames[bTiming(tripMileage)]}<br>S2S quote to Iconic (without markup): ${sTripQuote}<br>S2S timeframe: Roughly ${sTimeFrames[sTiming(tripMileage)]}<br><br><br>`;
+    document.getElementById("quotes").innerHTML = `<br>Bao quote to Iconic: ${bTripQuote}<br>Bao timeframe: Roughly ${bTimeFrames[bTiming(tripMileage)]}<br>Extras are would be included in the above price (nothing extra).<br><br>S2S quote to Iconic: ${sTripQuote}<br>S2S timeframe: Roughly ${sTimeFrames[sTiming(tripMileage)]}<br>Extras would increase the price by $25 - $100, depending on how much space they take.<br><br><br>`;
     document.getElementById("clientCopyPaste").innerHTML = `<br>Here is the format to paste to the client:<br><br>$${bTripQuote}(NEEDS MARKUP) - Roughly ${bTimeFrames[bTiming(tripMileage)]} - Private Shipper<br>$${sTripQuote}(NEEDS MARKUP) - Roughly ${sTimeFrames[sTiming(tripMileage)]} - Private Shipper<br>$TBD - Roughly 5 - 9 weeks - Haulbikes`;
     
 
