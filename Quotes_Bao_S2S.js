@@ -13,8 +13,8 @@ function runQuotes(){
     const baoVariant = baoMax - baoMin;
     const milesVariant = milesMax - milesMin;
     let tripMileage = prompt("Please enter the total mileage of the trip", 500);
-    const sTimeFrames = ["2 to 3 weeks",
-    "2.5 to 3.5 weeks", "3 to 4 weeks", "3.5 to 4.5 weeks"];
+    const sTimeFrames = ["2.5 to 3.5 weeks",
+    "3 to 4 weeks", "3.5 to 4.5 weeks", "4 to 5 weeks"];
     const bTimeFrames = ["1 to 2 weeks", "1.5 to 2.5 weeks"];
     const sTripQuote = round50(
         s2sMax - (((milesVariant - tripMileage) / milesVariant) * s2sVariant));
